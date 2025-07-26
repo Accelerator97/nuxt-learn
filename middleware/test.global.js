@@ -1,6 +1,5 @@
 export default defineNuxtRouteMiddleware((to, from) => {
     const paseURL = ['/', '/login', '/about', '/index']
-    console.log(`output->全局 to`, to)
     if (!paseURL.includes(to.path)) {
         let token = ""
         if (import.meta.client) {
@@ -11,7 +10,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
                 path: '/login',
                 query: {
                     code: 401,
-                    message: "请先登陆"
+                    message: '请先登录'
                 }
             })
         }

@@ -16,7 +16,8 @@
         </li>
       </ul>
     </header>
-    <router-view></router-view>
+    <NuxtPage />
+
     <footer>尾部</footer>
   </div>
 </template>

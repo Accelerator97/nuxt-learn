@@ -3,11 +3,10 @@
 </template>
 
 <script setup>
-
+console.log(`output->`, add(1, 1))
 onMounted(() => {
   const route = useRoute();
   if (route.query.code) {
-    console.log(`output->route`, route.query)
     ElMessage.error(route.query.code + '' + route.query.message)
   }
 })
