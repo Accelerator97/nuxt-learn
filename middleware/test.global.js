@@ -1,5 +1,5 @@
 export default defineNuxtRouteMiddleware((to, from) => {
-    const paseURL = ['/', '/login', '/about', '/index']
+    const paseURL = ['/', '/login', '/about', '/index','/myError']
     if (!paseURL.includes(to.path)) {
         let token = ""
         if (import.meta.client) {

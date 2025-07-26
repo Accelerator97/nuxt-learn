@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     count: 1, // 只能在服务端访问
     public: { // 既能在客户端访问 也能在服务端访问
-      baseURL: 'localhost:8080'
+      baseURL: 'https://api.ebag.readboy.com/examination-single-school'
     }
   }
 })
