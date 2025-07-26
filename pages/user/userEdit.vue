@@ -1,8 +1,7 @@
-<template>
-  <div>首页</div>
-</template>
+<template>user edit</template>
 
 <script setup>
+
 </script>
 
 <style lang="scss" scoped>

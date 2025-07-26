@@ -11,6 +11,9 @@
         <li>
           <NuxtLink to="/about">about</NuxtLink>
         </li>
+        <li>
+          <NuxtLink to="/user/userEdit">userEdit</NuxtLink>
+        </li>
       </ul>
     </header>
     <router-view></router-view>
