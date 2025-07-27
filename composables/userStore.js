@@ -13,7 +13,5 @@ export const userStore = defineStore('userStore', () => {
 
     return { token, setToken, getToken }
 }, {
-    persist: {
-        storage: localStorage
-    }
+    persist: true // 默认cookie存储
 })
