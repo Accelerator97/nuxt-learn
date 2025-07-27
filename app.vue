@@ -22,6 +22,8 @@
 
     <el-button type="primary" @click="setToken">设置token</el-button>
 
+    <el-button type="primary" @click="createError">创造错误</el-button>
+
     <footer>尾部</footer>
   </div>
 </template>
@@ -84,6 +86,11 @@ const setToken = () => {
 // })
 // count.value++
 // console.log(`output->`, count.value)
+
+function createError() {
+  showError({ statusCode: 200, message: 'hahah' })
+
+}
 </script>
 
 
