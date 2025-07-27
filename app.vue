@@ -56,6 +56,7 @@
 // 延迟数据加载：默认情况下（没有 lazy），useFetch 会阻塞导航直到数据加载完成
 // 使用 lazy: true 时，页面会立即渲染，数据在 hydration 后异步加载
 // status是状态  分为pending和success
+// useFetch有一个大坑：当传入的参数是一个响应式数据，如果响应式数据变动会自己重新发送请求
 // const url = 'https://api.ebag.readboy.com/examination-single-school/v1/subject/get?school_id=10001'
 // const { refresh, data: { value },status } = useFetch(url, {
 //   lazy: true
@@ -71,8 +72,18 @@ const clickMethod = async () => {
 }
 
 const setToken = () => {
-  window.localStorage.setItem('token', 456)
+  // window.localStorage.setItem('token', 456)
+  // userStore是一个函数，需要调用
+  userStore().setToken('hahaha')
+  console.log(`output->userStore().getToken()`, userStore().getToken())
 }
+
+// useState定义的数据 客户端、服务端都能够共享 客户端不会重新定义
+// let count = useState('count', () => {
+//   return 1
+// })
+// count.value++
+// console.log(`output->`, count.value)
 </script>
 
 

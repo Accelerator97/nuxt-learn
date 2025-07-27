@@ -1,7 +1,7 @@
 export function api(url, options) {
     const config = useRuntimeConfig()
     const nuxtApp = useNuxtApp()
-    return useFetch(url, {
+    return $fetch(url, {
         baseURL: config.public.baseURL,
         onRequest({ options }) {
             let token = import.meta.client ? localStorage.getItem('token') || '' : ''
@@ -28,7 +28,9 @@ export function api(url, options) {
                         })
                     })
                 }
+                return Promise.reject(response._data)
             }
+            return response._data
         },
         onResponseError({ response }) {
             // TODO: 同上
@@ -44,7 +46,7 @@ export function getApi(url, options) {
             method: "get",
             ...options
         }).then(res => {
-            resolve(res.data.value)
+            resolve(res)
         }).catch(e => {
             reject(e)
         })
