@@ -30,6 +30,16 @@
 
 <script setup>  
 
+useHead({
+  title: "首页",
+  meta: [
+    {
+      name: 'description',
+      content: '我是一个首页'
+    }
+  ]
+})
+
 // 只在客户端执行
 // if (import.meta.client) {
 //   const res = await $fetch('https://api.ebag.readboy.com/examination-single-school/v1/subject/get?school_id=10001')
@@ -89,7 +99,6 @@ const setToken = () => {
 
 function createError() {
   showError({ statusCode: 200, message: 'hahah' })
-
 }
 </script>
 
